@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/admin', function () {
+    return view('adminDash');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,4 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::resource('doctors',DoctorController::class);
+
 require __DIR__.'/auth.php';
+
+Route::resource('patients', PatientController::class);

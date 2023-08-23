@@ -16,6 +16,11 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:pt-5 sm:ml-10 sm:flex">
+                    <a href="/" >
+                        {{ __('Website') }}
+                    </a>              
+                 </div>
             </div>
 
             <!-- Settings Dropdown -->

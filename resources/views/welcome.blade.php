@@ -1,5 +1,5 @@
 @extends('layouts.main')
 @section('content')
-@include('home-partial.hero')
-@include('home-partial.step')
+@include('home-partials.hero')
+@include('home-partials.step')
 @endsection

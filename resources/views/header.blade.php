@@ -20,7 +20,8 @@
         </button> --}}
         
       </div>
-      <div>@if (Route::has('login'))
+      <div>
+        @if (Route::has('login'))
       <div class=" fixed top-0 right-0 px-6 py-4 sm:block">
           @auth
               <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-gray-900 underline">dashboard</a>

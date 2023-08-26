@@ -4,6 +4,8 @@
         <a  href="{{ url('/') }}" class="mr-5 hover:text-gray-900">Home</a>
         <a href="{{ url('/about') }}" class="mr-5 hover:text-gray-900">About us</a>
         {{-- <a class="mr-5 hover:text-gray-900">Services</a> --}}
+        <a href="{{ url('/ourdoctors') }}" class="hover:text-gray-900 mx-4">Our Doctors</a>
+
         <a href="{{ url('/contact') }}" class="hover:text-gray-900">Contact Us</a>
       </nav>
       <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">

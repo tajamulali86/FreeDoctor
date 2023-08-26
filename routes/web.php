@@ -45,3 +45,7 @@ Route::resource('doctors',DoctorController::class);
 require __DIR__.'/auth.php';
 
 Route::resource('patients', PatientController::class);
+
+Route::get('/test1', function () {
+    return view('admin.index');
+});

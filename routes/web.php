@@ -52,7 +52,9 @@ Route::get('/test', function () {
 
 Route::get('/test2', function () {
     return view('commentdoctor');
+
 });
+
 
 
 Route::get('/test1', function () {

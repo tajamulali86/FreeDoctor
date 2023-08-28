@@ -14,17 +14,22 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased ">
-        @include("header")
-        <div class="min-h-screen ">
+    <body class="font-sans antialiased flex row">
+        
             {{-- @include('layouts.navigation') --}}
+            <div class="col">
 
+                @include('layouts.NavDash')
+            </div>
           
+            <div class="col bg-red-800"  >
+                <main class="">
+                    @yield('content')
+                </main>
+
+            </div>
             <!-- Page Content -->
-            <main>
-                @yield('content')
-            </main>
-        </div>
-        @include('footer')
+       
+        {{-- @include('footer') --}}
     </body>
 </html>

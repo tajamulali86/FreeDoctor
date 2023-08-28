@@ -1,12 +1,14 @@
 @extends('layouts.main');
 @section('content')
 <!-- component -->
-<div class="mx-auto  p-80 m-20 bg-slate-300 shadow-lg rounded-lg container">
-  <div class="flex items-center justify-center p-12 ">
+<h1 class="text-4xl text-center mx-auto mt-2">Fill this form to consult the doctor</h1>
+<div class="container mx-auto mt-24 p-8 w-1/2 bg-slate-100 shadow-lg  rounded-lg ">
+  <div class="flex items-center justify-center p-2 ">
     <!-- Author: FormBold Team -->
     <!-- Learn More: https://formbold.com -->
-    <div class="mx-auto  ">
-      <form class="" action="" method="">
+  
+    <div class=" w-full ">
+      <form class="mx-auto " action="" method="">
         <div class="">
           <label
             for="name"
@@ -62,7 +64,7 @@
       type="text"
       name="subject"
       id="subject"
-      placeholder="Enter your subject"
+      placeholder="Enter your Phone"
       class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
       />
       <label
@@ -76,17 +78,20 @@
         
           <label
             for="message"
+          
             class="mt-10 block text-base font-medium text-[#07074D]">
+           
             Patient Medical history
           </label>
           <textarea
-            rows="4"
+          placeholder="example@domain.com"
+            rows="6"
             name="message"
             id="message"
-            placeholder="Type your message"
-            class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
+          
+            class="w-full  rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
           </textarea>
-            <label class="block mt-10 text-base font-mediumtext-[#07074D] dark:text-white" for="file_input">Upload file</label>
+            <label class="block mt-4 text-base font-mediumtext-[#07074D] dark:text-white" for="file_input">Upload file</label>
             <input class="block mt-5 w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file"/>
             
             <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
@@ -95,7 +100,8 @@
         
       </form>
      
-      <button type="submit" class="text-black bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium text-sm rounded-lg px-5 py-2.5 text-center mr-2 mb-2">Submit</button>
+      <button class="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+
 
 
     </div>

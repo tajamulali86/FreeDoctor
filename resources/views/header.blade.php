@@ -1,4 +1,4 @@
-<header class="text-gray-600 body-font">
+<header class="text-gray-600 body-font bg-white">
     <div class="container  mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
         <a  href="{{ url('/') }}" class="mr-5 hover:text-gray-900">Home</a>
@@ -22,7 +22,8 @@
         </button> --}}
         
       </div>
-      <div>@if (Route::has('login'))
+      <div>
+        @if (Route::has('login'))
       <div class=" fixed top-0 right-0 px-6 py-4 sm:block">
           @auth
               <a href="{{ url('/dashboard') }}" class="mr-5 hover:text-gray-900 underline">dashboard</a>

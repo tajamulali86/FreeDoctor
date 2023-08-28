@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProfileController;
@@ -52,11 +54,11 @@ Route::get('/test', function () {
 
 Route::get('/test2', function () {
     return view('commentdoctor');
-
 });
-
-
 
 Route::get('/test1', function () {
     return view('admin.index');
 });
+
+Route::get('/doctoradd',[ AdminController::class ,'addDoctor'])->name('create.doctor');
+Route::post('/doctoradd',[ AdminController::class ,'storeDoctor'])->name('store.doctor');

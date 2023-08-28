@@ -52,9 +52,9 @@ Route::get('/test', function () {
     return view('patient.index');
 });
 
-// Route::get('/test2', function () {
-//     return view('commentdoctor')
-// });
+Route::get('/test2', function () {
+    return view('commentdoctor');
+});
 
 Route::get('/test1', function () {
     return view('admin.index');

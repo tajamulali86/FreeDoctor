@@ -104,12 +104,13 @@
     </div>
 </nav> --}}
 
-<aside class=" p-10 text-white bg-gray-600" style="width: 10% ;height:90vh">
-    <nav class="nav  flex-column " >
+<aside class=" p-5  w-48 bg-zinc-800 text-white " style=" height:90vh">
+    <nav class=" flex  flex-col " >
     
         {{-- <a class="nav-link active" aria-current="page" href="{{ route('dashboard.index') }}">Home</a> --}}
         {{-- <a class="nav-link" href="{{ route('dashboard.list') }}">Volunteers list</a> --}}
-        <a class="nav-link" href="/">Back to website</a>
+        <a class="" href="/">Back to website</a>
+        <a class="" href="{{route('create.doctor')}}">Create Doctor</a>
         {{-- <a class="nav-link" href="{{ route('logout') }}">logout</a> --}}
       </nav>
     </aside>

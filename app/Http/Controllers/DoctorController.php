@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use App\Http\Controllers\Controller;
+use App\Models\Patient;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -14,10 +15,12 @@ class DoctorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-        return view('doctor.index');
-    }
+{
+    $patients = Patient::all();
+    // dd($patients);
+    return view('doctor.index', compact('patients'));
+}
+
 
     /**
      * Show the form for creating a new resource.

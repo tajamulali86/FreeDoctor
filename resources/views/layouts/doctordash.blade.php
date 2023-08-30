@@ -8,6 +8,13 @@
         <a class="" href="{{route('view.patients')}}">All Patients</a> --}}
         <a class="" href="#">Edit my Profile</a>
         <a class="" href="#">All Patients</a>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <button type="submit" class="">
+                {{ __('Log Out') }}
+            </button>
+        </form>
         {{-- <a class="nav-link" href="{{ route('logout') }}">logout</a> --}}
       </nav>
     </aside>

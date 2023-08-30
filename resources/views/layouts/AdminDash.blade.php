@@ -104,13 +104,20 @@
     </div>
 </nav> --}}
 
-<aside class=" p-5  w-48 bg-zinc-800 text-white " style=" height:90vh">
-    <nav class=" flex  flex-col " >
+<aside class=" p-5  w-48 bg-zinc-800 text-white " style=" height:100vh">
+    <nav class=" flex  flex-col my-10 " >
     
         {{-- <a class="nav-link active" aria-current="page" href="{{ route('dashboard.index') }}">Home</a> --}}
         {{-- <a class="nav-link" href="{{ route('dashboard.list') }}">Volunteers list</a> --}}
-        <a class="" href="/">Back to website</a>
-        <a class="" href="{{route('create.doctor')}}">Create Doctor</a>
+        <a class="hover:ml-4 hover:text-indigo-500 transition-transform  duration-1000 ease-in-out my-2" href="/">Back to website</a>
+        <a class="hover:ml-4 hover:text-indigo-500 transition-transform  duration-1000 ease-in-out my-2" href="{{route('create.doctor')}}">Create Doctor</a>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <button type="submit" class=" hover:ml-4 hover:text-indigo-500 transition-transform  duration-1000 ease-in-out my-2">
+                {{ __('Log Out') }}
+            </button>
+        </form>
         {{-- <a class="nav-link" href="{{ route('logout') }}">logout</a> --}}
       </nav>
     </aside>

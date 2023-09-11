@@ -16,9 +16,11 @@ class DoctorController extends Controller
      */
     public function index()
 {
+    $user=Auth()->user();
+
     $patients = Patient::all();
     // dd($patients);
-    return view('doctor.index', compact('patients'));
+    return view('doctor.index',['patients'=> $patients, 'user'=>$user]);
 }
 
 
@@ -53,6 +55,20 @@ class DoctorController extends Controller
     {
         //
     }
+
+    public function showPaient($id)
+    {
+        //
+        // dd($user->name);
+       
+        // $patient = Auth()->User()->patient;
+        $user=Auth()->user();
+
+        $patient = Patient::find($id);
+    
+            return view('patient.show',['patient'=> $patient, 'user'=>$user]);
+    }
+    
 
     /**
      * Show the form for editing the specified resource.

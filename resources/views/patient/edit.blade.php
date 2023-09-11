@@ -1,4 +1,4 @@
-@extends('layouts.patient');
+@extends('layouts.patient')
 @section('content')
 <form action="{{ route('patients.update', ['patient' => $patient->id]) }}" method="POST" enctype="multipart/form-data">
     @csrf

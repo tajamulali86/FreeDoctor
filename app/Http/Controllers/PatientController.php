@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class PatientController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +20,14 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patient = User::where('userType', 'patient')->first();
+        $user=Auth()->user();
+        // dd($user->name);
+       
+        $patient = Auth()->User()->patient;
+        
     
-        if ($patient) {
-            return view('patient.index')->with('patient', $patient);
+        if ($user) {
+            return view('patient.index',['patient'=> $patient, 'user'=>$user]);
         } else {
             return view('no_patients_found');
         }
@@ -35,9 +40,14 @@ class PatientController extends Controller
      */
     public function create()
     {
+        $user=Auth()->user();
+
         //
+        $patient = Auth()->User()->patient;
+
+
         
-        return view('patient.create');
+        return view('patient.create',['patient'=> $patient, 'user'=>$user]);
     }
 
     /**
@@ -92,8 +102,7 @@ class PatientController extends Controller
             'age' => $request->input('age'),
             'country' => $request->input('country'),
             'address' => $request->input('address'),
-           
-            'illness' => $request->input('illness'),
+               'illness' => $request->input('illness'),
             'file_path' => $file_path,
             'user_id' => Auth::id(), 
         ]);
@@ -107,7 +116,7 @@ class PatientController extends Controller
 
 
         // Redirect to a thank-you page
-        return view('/dashboard');
+        return view('/patients');
     
 
     }
@@ -121,16 +130,20 @@ class PatientController extends Controller
     public function show($id)
     {
         //
-        
+        // dd($user->name);
+       
+        // $patient = Auth()->User()->patient;
+        $user=Auth()->user();
+
         $patient = Patient::find($id);
-    
         if ($patient && $patient->user_id == Auth::id()) {
-            return view('patient.show')->with('patient', $patient);
+            return view('patient.show',['patient'=> $patient, 'user'=>$user]);
         } else {
             // Handle the case where the patient with the given ID is not found or unauthorized.
             return view('patient.not_found');
         }
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -141,10 +154,12 @@ class PatientController extends Controller
     public function edit($id)
     {
         //
+        $user=Auth()->user();
+
         $patient = Patient::find($id);
     
         if ($patient && $patient->user_id == Auth::id()) {
-            return view('patient.edit')->with('patient', $patient);
+            return view('patient.edit',['patient'=> $patient, 'user'=>$user]);
         } else {
             // Handle the case where the patient with the given ID is not found or unauthorized.
             return view('patient.not_found');
@@ -160,6 +175,8 @@ class PatientController extends Controller
      */
     public function update(Request $request, Patient $patient)
     {
+        $user=Auth()->user();
+
         $file_path = $patient->file_path; // Get the current file path
     
         if ($request->hasFile('file')) {
@@ -184,7 +201,7 @@ class PatientController extends Controller
             'file_path' => $file_path,
         ]);
     
-        return view('patient.show')->with('patient', $patient);
+        return view('patient.show',['patient'=> $patient, 'user'=>$user]);
         // If a new file was uploaded, you may want to delete the old one here if it's no longer needed.
     }
 

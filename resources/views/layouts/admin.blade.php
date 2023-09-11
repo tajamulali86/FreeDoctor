@@ -17,7 +17,7 @@
     <body class="font-sans antialiased flex">
         <div class=" bg-gray-100">
             {{-- @include('layouts.navigation') --}}
-@include('layouts.AdminDash')
+@include('dashboard-navbars.admin')
 </div>
           
             <!-- Page Content -->

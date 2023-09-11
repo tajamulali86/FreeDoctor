@@ -24,7 +24,12 @@
                     <td>{{ $Patient->number }}</td>
                     <td>{{ $Patient->age }}</td>
                     <td>
-                        <a href="{{ route('patients.show', $Patient->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> click</a>
+                        {{-- <a href="{{ route('doctors.consult', $Patient->id)  }}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> click</a> --}}
+                        {{-- <a href="{{url('consult-patients/'.$Patient->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> click</a> --}}
+                        <a href="{{ route('doctors.consult', ['id' => $Patient->id]) }}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-eye"></i> click
+                        </a>
+                        
                     </td>
                 </tr>
                 @endforeach

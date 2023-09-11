@@ -14,10 +14,13 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased flex">
+    <body class="font-sans antialiased ">
+        <div class="bg-slate-800 text-2xl text-white text-center "><h2>welcome {{$user->name}}</h2></div>
+            <div class="flex">
         <div class=" bg-gray-100">
             {{-- @include('layouts.navigation') --}}
-@include('layouts.doctordash')
+@include('dashboard-navbars.doctor')
+
 </div>
           
             <!-- Page Content -->
@@ -27,3 +30,4 @@
         {{-- @include('footer') --}}
     </body>
 </html>
+

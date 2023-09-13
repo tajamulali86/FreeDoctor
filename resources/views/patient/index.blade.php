@@ -1,4 +1,4 @@
-@extends('layouts.patient');
+@extends('layouts.patient')
 @section('content')
 
 welcome to patient dashboard

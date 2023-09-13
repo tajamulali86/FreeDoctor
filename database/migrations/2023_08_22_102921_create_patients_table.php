@@ -17,6 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('number');
             $table->string('age');
+            //modify
+            $table->string('Address'); // Add a new column
+            $table->string('illness'); // Add a new column
+            $table->string('country'); // Add a new column
+            $table->string('file_path');
+            $table->unsignedBigInteger('user_id'); // Add a foreign key
+            $table->foreign('user_id')->references('id')->on('users');
+            //modify
             $table->timestamps();
         });
     }

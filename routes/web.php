@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware('auth','Patient')->group(function () {
 
-    Route::resource('patients', PatientController::class);
+    Route::resource('patients', PatientController::class)->only('create','delete','update','edit','store');
     // Route::put('/patients/{id}',[]
     // })
     // Route::put('/patients/{id}',[ PatientController::class ,'update'])->name('patient.update');
@@ -31,6 +31,12 @@ Route::middleware('auth','Patient')->group(function () {
     //     return view('patient.index');});
 
 });
+
+Route::get('/patients',[PatientController::class,'index'])->middleware('auth')->name('patients.index');
+Route::get('/patients/{id}',[PatientController::class,'show'])->middleware('auth')->name('patients.show');
+Route::get('/consult-patients/{id}',[DoctorController::class,'showPaient'])->middleware('auth')->name('doctors.consult');
+
+
 
 
 Route::get('/', function () {
@@ -72,6 +78,7 @@ Route::resource('doctors',DoctorController::class);
 
 });
 
+//admin route
 Route::middleware('auth','Admin')->group(function () {
 Route::get('/doctoradd',[ AdminController::class ,'addDoctor'])->name('create.doctor');
 Route::post('/doctoradd',[ AdminController::class ,'storeDoctor'])->name('store.doctor');

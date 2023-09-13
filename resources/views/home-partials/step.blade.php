@@ -12,8 +12,8 @@
             </svg>
           </div>
           <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Shooting Stars</h2>
-            <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Register yourself on our Platform</h2>
+            <p class="leading-relaxed">Make your profile and provide the necessary informatio</p>
           </div>
         </div>
       </div>
@@ -29,8 +29,8 @@
             </svg>
           </div>
           <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">The Catalyzer</h2>
-            <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl"> Book a consultation session with our Doctors</h2>
+            <p class="leading-relaxed">Give a brief description about your Illness..</p>
           </div>
         </div>
       </div>
@@ -47,8 +47,10 @@
             </svg>
           </div>
           <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">The 400 Blows</h2>
-            <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Provide detail Medical History (if applicable)
+
+            </h2>
+            <p class="leading-relaxed"> After providing your medical history upload necessary reports that can help our doctor providers better understanding of your case.</p>
           </div>
         </div>
       </div>
@@ -65,8 +67,8 @@
             </svg>
           </div>
           <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
-            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Neptune</h2>
-            <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+            <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Get the consultation done with our doctors</h2>
+            <p class="leading-relaxed">Get the prescription from our doctors and share on socials.</p>
           </div>
         </div>
       </div>

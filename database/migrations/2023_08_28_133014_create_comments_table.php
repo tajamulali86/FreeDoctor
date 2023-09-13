@@ -15,13 +15,17 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
-            $table->integer('patient_id')->unsigned();
-            $table->integer('parent_id')->unsigned()->nullable();
-            $table->text('body');
-            $table->string('file_path');
-
+            // $table->integer('user_id')->unsigned();
+            // $table->integer('patient_id')->unsigned();
+            $table->unsignedBigInteger('user_id'); 
+            $table->unsignedBigInteger('patient_id'); 
+            // $table->integer('parent_id')->unsigned()->nullable();
+            $table->text('body')->nullable();
+            $table->string('file_path')->nullable();
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade'); // This will cascade delete comments when a patient is deleted
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // 
             $table->timestamps();
+            
         });
     }
 

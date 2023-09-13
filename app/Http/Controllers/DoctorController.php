@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,11 @@ class DoctorController extends Controller
      */
     public function index()
 {
+    $user=Auth()->user();
+
     $patients = Patient::all();
     // dd($patients);
-    return view('doctor.index', compact('patients'));
+    return view('doctor.index',['patients'=> $patients, 'user'=>$user]);
 }
 
 
@@ -53,6 +56,21 @@ class DoctorController extends Controller
     {
         //
     }
+
+    public function showPaient($id)
+    {
+        //
+        // dd($user->name);
+       
+        // $patient = Auth()->User()->patient;
+        $user=Auth()->user();
+        
+       $comments= Comment::where('patient_id', $id)->get();
+        $patient = Patient::find($id);
+    
+            return view('doctor.patient',['patient'=> $patient, 'user'=>$user, 'comments'=>$comments]);
+    }
+    
 
     /**
      * Show the form for editing the specified resource.

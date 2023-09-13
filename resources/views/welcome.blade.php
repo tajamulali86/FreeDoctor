@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('title', "FreeDoctor")
+
 @section('content')
 @include('home-partials.hero')
 @include('home-partials.step')

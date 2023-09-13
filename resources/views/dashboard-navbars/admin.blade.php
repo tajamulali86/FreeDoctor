@@ -104,17 +104,19 @@
     </div>
 </nav> --}}
 
-<aside class=" p-5  w-48 bg-zinc-800 text-white " style=" height:100vh">
-    <nav class=" flex  flex-col my-10 " >
+<aside class=" p-5  w-48 bg-zinc-800 h-screen min-h-full text-white   " >
+    <nav class=" flex fixed  flex-col my-10 " >
     
         {{-- <a class="nav-link active" aria-current="page" href="{{ route('dashboard.index') }}">Home</a> --}}
         {{-- <a class="nav-link" href="{{ route('dashboard.list') }}">Volunteers list</a> --}}
-        <a class="hover:ml-4 hover:text-indigo-500 transition-transform  duration-1000 ease-in-out my-2" href="/">Back to website</a>
-        <a class="hover:ml-4 hover:text-indigo-500 transition-transform  duration-1000 ease-in-out my-2" href="{{route('create.doctor')}}">Create Doctor</a>
+        <x-dash-link route="/" message="Back to website"/>     
+        <x-dash-link route="{{route('create.doctor')}}" message="Create Doctor"/>     
+        {{-- <a class="hover:ml-4 hover:text-indigo-500 transition-transform  duration-1000 ease-in-out my-2" href="/">Back to website</a> --}}
+        {{-- <a class="hover:ml-4 hover:text-indigo-500 transition-transform?  duration-1000 ease-in-out my-2" href="{{route('create.doctor')}}">Create Doctor</a> --}}
         <form method="POST" action="{{ route('logout') }}">
             @csrf
 
-            <button type="submit" class=" hover:ml-4 hover:text-indigo-500 transition-transform  duration-1000 ease-in-out my-2">
+            <button type="submit" class=" p-3 hover:outline-2 hover:outline-neutral-50 hover:bg-white hover:text-black hover:rounded-md hover:shadow-lg">
                 {{ __('Log Out') }}
             </button>
         </form>

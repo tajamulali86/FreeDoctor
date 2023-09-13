@@ -104,8 +104,8 @@
     </div>
 </nav> --}}
 
-<aside class=" p-5  w-48 bg-zinc-800 text-white " style=" height:100vh">
-    <nav class=" flex  flex-col my-10 " >
+<aside class=" p-5  w-48 bg-zinc-800 h-screen min-h-full text-white   " >
+    <nav class=" flex fixed  flex-col my-10 " >
     
         {{-- <a class="nav-link active" aria-current="page" href="{{ route('dashboard.index') }}">Home</a> --}}
         {{-- <a class="nav-link" href="{{ route('dashboard.list') }}">Volunteers list</a> --}}

@@ -1,4 +1,6 @@
 @extends('layouts.main')
+@section('title', "About || FreeDoctor")
+
 @section('content')
 
 <section class="text-gray-600 body-font">

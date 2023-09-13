@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 
@@ -63,10 +64,11 @@ class DoctorController extends Controller
        
         // $patient = Auth()->User()->patient;
         $user=Auth()->user();
-
+        
+       $comments= Comment::where('patient_id', $id)->get();
         $patient = Patient::find($id);
     
-            return view('patient.show',['patient'=> $patient, 'user'=>$user]);
+            return view('doctor.patient',['patient'=> $patient, 'user'=>$user, 'comments'=>$comments]);
     }
     
 

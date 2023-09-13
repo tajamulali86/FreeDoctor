@@ -23,14 +23,17 @@ class CommentController extends Controller
         }
         // $input = $request->all();
 
-        $request->validate([
-            'body'=>'required',
-        ]);
+        // $request->validate([
+        //     'body'=>'required',
+        // ]);
 
-        $input['user_id'] = auth()->user()->id;
+        // $input['user_id'] = auth()->user()->id;
 
         Comment::create([ 
+            
         'user_id' =>  $request->input('user_id'),
+        'patient_id' => $request->input('patient_id'), // Set the patient_id here
+
         'body' => $request->input('body'),
         'file_path' => $file_path,]);
 

@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware('auth','Patient')->group(function () {
 
-    Route::resource('patients', PatientController::class)->only('create','delete','edit','store');
+    Route::resource('patients', PatientController::class)->only('create','delete','update','edit','store');
     // Route::put('/patients/{id}',[]
     // })
     // Route::put('/patients/{id}',[ PatientController::class ,'update'])->name('patient.update');

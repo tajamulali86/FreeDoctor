@@ -1,13 +1,15 @@
-<aside class="p-5 w-48 bg-zinc-800   text-white" style="height: 100vh ">
-    <nav class="flex flex-col ">
+<aside class=" p-5   w-48 bg-zinc-800 text-white h-screen min-h-full  " >
+    <nav class="flex fixed  flex-col ">
+        
         <x-dash-link route="/" message="Back to website"/>            
+        {{-- @dd($patient) --}}
         @if (!$patient)
             <x-dash-link route="{{ url('/patients/create') }}" message="Create my Profile"/>
         @else
             <x-dash-link route="{{ url('/patients/' . $patient->id) }}" message="View my Profile"/>
             <x-dash-link route="{{ url('/patients/' . $patient->id.'/edit') }}" message="Edit my Profile"/>
             <x-dash-link route="{{ url('/our-doctors') }}" message="View Doctors"/>
-            <x-dash-link route="#" message="Consultation with a doctor"/>
+            {{-- <x-dash-link route="#" message="Consultation "/> --}}
         @endif
         <form method="POST" action="{{ route('logout') }}">
             @csrf

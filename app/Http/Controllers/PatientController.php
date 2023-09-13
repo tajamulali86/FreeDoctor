@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Patient;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
@@ -116,7 +117,7 @@ class PatientController extends Controller
 
 
         // Redirect to a thank-you page
-        return view('/patients');
+        return redirect('/patients');
     
 
     }
@@ -136,8 +137,10 @@ class PatientController extends Controller
         $user=Auth()->user();
 
         $patient = Patient::find($id);
+        $comments= Comment::where('patient_id', $id)->get();
+        // dd($comments);
         if ($patient && $patient->user_id == Auth::id()) {
-            return view('patient.show',['patient'=> $patient, 'user'=>$user]);
+            return view('patient.show',['patient'=> $patient, 'user'=>$user,'comments'=>$comments]);
         } else {
             // Handle the case where the patient with the given ID is not found or unauthorized.
             return view('patient.not_found');

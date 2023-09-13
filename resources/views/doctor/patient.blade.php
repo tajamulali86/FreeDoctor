@@ -1,4 +1,4 @@
-@extends('layouts.patient')
+@extends('layouts.doctor')
 @section('content')
     <div class="">
         <div class="border-b border-gray-900/10 pb-12">
@@ -98,15 +98,9 @@
     </div>
     <hr />
     <h4 class="block text-sm w-full font-medium leading-6 text-gray-900">Display Comments</h4>
-    {{-- @dd(auth()->user()->id) --}}
 
-    {{-- @dd($comments) --}}
     <hr />
-
     @include('comments', ['comments' => $comments, 'patient_id' => $patient->id])
-
-        
-
 
     <h4 class="block text-xl mt-3 w-full font-medium leading-6 text-gray-900">Add comment</h4>
     <form method="post" action="{{ route('comments.store') }}"  enctype="multipart/form-data">

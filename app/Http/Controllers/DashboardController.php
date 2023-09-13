@@ -32,8 +32,9 @@ class DashboardController extends Controller
             else if($userType=='patient'){
                 $user=Auth()->user();
                 
-                
-                $patient = $user->patient_id;
+                // $patients=Patient::get();
+                // $patient = $patients->user;
+                $patient = $user->patient;
                 
             //  if ($patient && $patient->user_id == Auth::id()) {
                  return view('patient.index',['patient'=> $patient, 'user'=>$user]);
